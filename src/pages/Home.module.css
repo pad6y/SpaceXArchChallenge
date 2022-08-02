@@ -1,0 +1,16 @@
+.home {
+  width: 80%;
+  margin: 3rem auto;
+  padding: 3rem;
+  border: 3px solid var(--dark-grey);
+  text-align: center;
+}
+
+.home h1 {
+  font-size: 2rem;
+}
+
+.home p {
+  color: var(--dark-grey);
+  margin-top: 2rem;
+}

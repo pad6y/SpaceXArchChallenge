@@ -1,0 +1,15 @@
+.logo {
+  height: auto;
+  width: 24rem;
+  margin: 0 auto;
+}
+
+.fillWhite {
+  fill: white;
+}
+
+@media screen and (max-width: 576px) {
+  .logo {
+    width: 18rem;
+  }
+}

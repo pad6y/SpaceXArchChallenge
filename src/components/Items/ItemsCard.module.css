@@ -1,0 +1,45 @@
+.card {
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  overflow: hidden;
+  background: var(--black);
+}
+
+.card img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.card h3,
+h4,
+p {
+  color: var(--white);
+  padding: 0.2rem 1rem;
+}
+
+.btn {
+  width: 50%;
+  padding: 0.4rem 1rem;
+  margin: 1.5rem 0;
+  border: none;
+  border-radius: 0.8rem;
+  background-color: var(--green);
+  color: var(--white);
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: var(--white);
+  color: var(--green);
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.details {
+  padding: 0.5rem;
+}

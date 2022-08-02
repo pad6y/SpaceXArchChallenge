@@ -1,0 +1,26 @@
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  background-color: var(--dark-grey);
+  list-style: none;
+  padding: 1.2rem 0;
+}
+.navbar li a {
+  text-decoration: none;
+  color: var(--white);
+  font-size: 1.5rem;
+  margin: 0 2.5rem;
+}
+
+@media screen and (max-width: 576px) {
+  .navbar {
+    justify-content: center;
+  }
+  .navbar li a {
+    font-size: 1rem;
+  }
+}
+
+.navbar li a:hover {
+  color: var(--green);
+}
