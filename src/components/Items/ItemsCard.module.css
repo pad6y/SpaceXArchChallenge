@@ -1,12 +1,15 @@
 .card {
-  position: relative;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  display: flex;
+  /* justify-content: space-around; */
+  flex-direction: column;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.56);
   overflow: hidden;
   background: var(--black);
 }
 
 .card img {
-  width: 100%;
+  /* width: 100%; */
+  height: 250px;
   object-fit: cover;
 }
 
@@ -24,7 +27,7 @@ p {
   border: none;
   border-radius: 0.8rem;
   background-color: var(--green);
-  color: var(--white);
+  color: var(--black);
   font-weight: bold;
   text-decoration: none;
   text-align: center;
@@ -42,4 +45,5 @@ p {
 
 .details {
   padding: 0.5rem;
+  min-height: 220px;
 }

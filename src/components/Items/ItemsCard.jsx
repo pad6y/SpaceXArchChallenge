@@ -9,16 +9,16 @@ function ItemsCard({ vehicle }) {
         <h3>Name : {name}</h3>
         <h4>Type : {type}</h4>
         <p>Description: {description}</p>
-        <div className={styles.center}>
-          <a
-            href={wikipedia}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.btn}
-          >
-            Wiki
-          </a>
-        </div>
+      </div>
+      <div className={styles.center}>
+        <a
+          href={wikipedia}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.btn}
+        >
+          Wiki
+        </a>
       </div>
     </article>
   );

@@ -1,15 +1,15 @@
 .logo {
   height: auto;
-  width: 24rem;
   margin: 0 auto;
+  fill: white;
 }
 
-.fillWhite {
-  fill: white;
+.logo:hover {
+  fill: var(--green);
 }
 
 @media screen and (max-width: 576px) {
   .logo {
-    width: 18rem;
+    width: 18rem !important;
   }
 }

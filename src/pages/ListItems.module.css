@@ -13,10 +13,5 @@
   display: grid;
   gap: 2rem;
   padding: 0 0.5rem;
-}
-
-@media screen and (min-width: 576px) {
-  .itemsContainer {
-    grid-template-columns: repeat(auto-fill, minmax(338.8px, 1fr));
-  }
+  grid-template-columns: repeat(auto-fill, minmax(338.8px, 1fr));
 }
