@@ -1,9 +1,24 @@
 .navbar {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   background-color: var(--dark-grey);
-  list-style: none;
   padding: 1.2rem 0;
+}
+
+nav h1 {
+  text-transform: capitalize;
+  color: var(--white);
+  margin-left: 3rem;
+  font-size: 2rem;
+  letter-spacing: 0.4rem;
+  border: 2px solid var(--green);
+  border-radius: 15px;
+  padding: 0.3rem 1.5rem;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
 }
 .navbar li a {
   text-decoration: none;

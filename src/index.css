@@ -1,6 +1,7 @@
 :root {
   --black: #333;
   --white: #fff;
+  --light-grey: #eee;
   --dark-grey: #444;
   --green: #67ea67;
   --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
@@ -33,4 +34,6 @@ code {
 
 main {
   min-height: 80vh;
+  background-color: var(--light-grey);
+  padding: 0 1rem 2rem 1rem;
 }

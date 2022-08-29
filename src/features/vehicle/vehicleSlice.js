@@ -53,6 +53,9 @@ export const vehicleSlice = createSlice({
   name: 'vehicle',
   initialState,
   reducers: {
+    sortList: (state) => {
+      state.vehicles = state.vehicles.reverse();
+    },
     reset: (state) => initialState,
   },
   extraReducers: (builder) => {
@@ -71,5 +74,5 @@ export const vehicleSlice = createSlice({
   },
 });
 
-export const { reset } = vehicleSlice.actions;
+export const { sortList, reset } = vehicleSlice.actions;
 export default vehicleSlice.reducer;
