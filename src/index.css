@@ -2,9 +2,10 @@
   --black: #333;
   --white: #fff;
   --light-grey: #eee;
+  --medium-grey: #ccc;
   --dark-grey: #444;
-  --green: #67ea67;
-  --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
+  --green: rgb(103, 234, 103);
+  --lightShadow: 4px 5px 3px 0px rgba(0, 0, 0, 0.5);
   --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
 }
 
@@ -34,6 +35,6 @@ code {
 
 main {
   min-height: 80vh;
-  background-color: var(--light-grey);
+  background-color: var(--medium-grey);
   padding: 0 1rem 2rem 1rem;
 }

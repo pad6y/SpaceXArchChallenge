@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import styles from './ListItems.module.css';
+import styles from './ListSpaceCraftPage.module.css';
 import { getVehicles, reset, sortList } from '../features/vehicle/vehicleSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import ItemsCard from '../components/Items/ItemsCard';
