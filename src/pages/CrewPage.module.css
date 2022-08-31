@@ -18,3 +18,9 @@
     grid-template-columns: repeat(1, 1fr);
   }
 }
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

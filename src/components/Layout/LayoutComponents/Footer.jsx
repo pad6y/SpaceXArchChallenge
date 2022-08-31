@@ -7,22 +7,6 @@ import { useEffect, useState, useCallback } from 'react';
 function Footer() {
   const [company, setCompany] = useState();
 
-  // const fetchCompany = useCallback(async () => {
-  //   try {
-  //     const resp = await fetch('https://api.spacexdata.com/v4/company');
-
-  //     const responseData = await resp.json();
-
-  //     if (!resp.ok) {
-  //       throw new Error(responseData.message);
-  //     }
-
-  //     const companyData = responseData;
-  //     setCompany(companyData);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // }, []);
   const fetchCompany = useCallback(async () => {
     try {
       const response = await axios.get('https://api.spacexdata.com/v4/company');
@@ -72,7 +56,7 @@ function Footer() {
 
   return (
     <footer>
-      <Logo size={12} />
+      <Logo className={styles.logo} />
       {content}
 
       <div className={styles.copyright}>

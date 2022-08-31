@@ -16,6 +16,23 @@ footer {
   margin: 1.5rem;
 }
 
+.logo {
+  height: auto;
+  margin: 0 auto;
+  fill: white;
+  width: 14rem;
+}
+
+.logo:hover {
+  fill: var(--green);
+}
+
+@media screen and (max-width: 576px) {
+  .logo {
+    width: 8rem;
+  }
+}
+
 .col1 {
   padding: 1rem;
   margin-left: 11rem;

@@ -31,7 +31,7 @@
   text-transform: capitalize;
   font-weight: bold;
   background-color: var(--white);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.56);
+  box-shadow: var(--mediumShadow);
   transition: color 300ms ease, background-color 700ms ease;
 }
 

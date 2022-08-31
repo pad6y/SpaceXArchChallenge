@@ -6,7 +6,7 @@ function Header() {
   return (
     <header className={styles.header}>
       <Link to="/">
-        <Logo size={24} />
+        <Logo className={styles.logo} />
       </Link>
     </header>
   );

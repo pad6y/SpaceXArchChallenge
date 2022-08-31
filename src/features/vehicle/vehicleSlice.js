@@ -25,13 +25,13 @@ export const vehicleSlice = createSlice({
     [getVehicles.pending]: (state) => {
       state.isLoading = true;
     },
-    [getVehicles.fulfilled]: (state, action) => {
+    [getVehicles.fulfilled]: (state, { payload }) => {
       state.isLoading = false;
-      state.vehicles = action.payload;
+      state.vehicles = payload;
     },
-    [getVehicles.rejected]: (state, action) => {
+    [getVehicles.rejected]: (state, { payload }) => {
       state.isLoading = false;
-      state.message = action.payload;
+      state.message = payload;
     },
   },
 });

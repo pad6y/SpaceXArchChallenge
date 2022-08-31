@@ -5,8 +5,9 @@
   --medium-grey: #ccc;
   --dark-grey: #444;
   --green: rgb(103, 234, 103);
-  --lightShadow: 4px 5px 3px 0px rgba(0, 0, 0, 0.5);
-  --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
+  --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
+  --mediumShadow: 4px 5px 3px 0px rgba(0, 0, 0, 0.5);
+  --darkShadow: 7px 10px 5px 0px rgba(0, 0, 0, 0.5);
 }
 
 * {

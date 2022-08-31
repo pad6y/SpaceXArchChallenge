@@ -1,5 +1,4 @@
 import axios from 'axios';
-
 const URL = 'https://api.spacexdata.com/v4/';
 
 export const getVehiclesThunk = async (category, thunkAPI) => {

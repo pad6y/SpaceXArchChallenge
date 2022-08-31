@@ -1,0 +1,41 @@
+.btn_container {
+  display: flex;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.prev_btn {
+  margin-right: 0.5rem;
+  border: 2px solid var(--green);
+  padding: 0.2rem 0.6rem;
+  border-radius: 0.7rem 0 0 0.7rem;
+  box-shadow: var(--lightShadow);
+}
+
+.next_btn {
+  margin-left: 0.5rem;
+  border: 2px solid var(--green);
+  padding: 0.2rem 0.6rem;
+  border-radius: 0 0.7rem 0.7rem 0;
+  box-shadow: var(--lightShadow);
+  /* align-items: center; */
+}
+
+.page_btn {
+  margin: 0 0.5rem;
+  padding: 0.2rem;
+  border-radius: 0.2rem;
+  border: 2px solid var(--green);
+  box-shadow: var(--lightShadow);
+}
+
+.active_btn {
+  font-weight: bold;
+  background-color: var(--green);
+  border: 2px solid var(--black);
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+}

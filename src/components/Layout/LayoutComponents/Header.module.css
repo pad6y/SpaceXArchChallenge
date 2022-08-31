@@ -2,3 +2,20 @@
   background-color: var(--black);
   padding: 2rem;
 }
+
+.logo {
+  height: auto;
+  margin: 0 auto;
+  fill: white;
+  width: 23rem;
+}
+
+.logo:hover {
+  fill: var(--green);
+}
+
+@media screen and (max-width: 576px) {
+  .logo {
+    width: 18rem;
+  }
+}

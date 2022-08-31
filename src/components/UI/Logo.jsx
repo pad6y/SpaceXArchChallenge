@@ -1,8 +1,6 @@
-import styles from './Logo.module.css';
-
-function logo({ size }) {
+function logo({ className }) {
   return (
-    <div className={styles.logo} style={{ width: `${size}rem` }}>
+    <div className={className}>
       <svg version="1.1" x="0px" y="0px" viewBox="0 0 400 50">
         <title>SpaceX Logo</title>
         <g className="letter_s">

@@ -2,7 +2,7 @@
   display: flex;
   /* justify-content: space-around; */
   flex-direction: column;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.56);
+  box-shadow: var(--darkShadow);
   overflow: hidden;
   background: var(--black);
 }
