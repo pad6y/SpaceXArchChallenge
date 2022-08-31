@@ -1,20 +1,74 @@
 .home_container {
-  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80vh;
+  background: url('../assets/low-poly-grid-haikei.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.home {
-  width: 80%;
-  margin: 0 auto;
-  padding: 3rem;
-  border: 3px solid var(--dark-grey);
-  text-align: center;
+.circle {
+  height: 30rem;
+  width: 30rem;
+  border-radius: 50%;
+  background-image: conic-gradient(
+    var(--green),
+    green,
+    var(--dark-grey),
+    black
+  );
+  position: relative;
+  /* animation: rotate 2s linear infinite; */
 }
 
-.home h1 {
-  font-size: 2rem;
+.center_circle {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  border-radius: 50%;
+  background-color: var(--black);
+  height: 28rem;
+  width: 28rem;
 }
 
-.home p {
-  color: var(--dark-grey);
-  margin-top: 2rem;
+.logo {
+  position: absolute;
+  fill: var(--white);
+  top: 3rem;
+  right: -18rem;
+  width: 150rem;
+}
+
+@media screen and (max-width: 820px) {
+  .logo {
+    width: 110rem;
+    right: -8rem;
+    top: 5rem;
+  }
+}
+@media screen and (max-width: 520px) {
+  .circle {
+    height: 19rem;
+    width: 19rem;
+  }
+  .center_circle {
+    height: 17rem;
+    width: 17rem;
+  }
+  .logo {
+    width: 60rem;
+    right: -2rem;
+    top: 5rem;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
 }

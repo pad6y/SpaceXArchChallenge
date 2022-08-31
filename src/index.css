@@ -37,5 +37,5 @@ code {
 main {
   min-height: 80vh;
   background-color: var(--medium-grey);
-  padding: 0 1rem 2rem 1rem;
+  /* padding: 0 1rem 2rem 1rem; */
 }

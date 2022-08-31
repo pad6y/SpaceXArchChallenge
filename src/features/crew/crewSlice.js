@@ -38,9 +38,11 @@ export const crewSlice = createSlice({
       state.totalPages = state.crew.length;
       state.isLoading = false;
     },
-    [getAllCrew.rejected]: (state, { payload }) => {
+    [getAllCrew.rejected]: (state, action) => {
       state.isLoading = false;
-      console.log(payload);
+      if (action.payload) {
+        console.log(action.payload);
+      }
     },
   },
 });

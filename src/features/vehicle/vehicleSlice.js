@@ -29,9 +29,9 @@ export const vehicleSlice = createSlice({
       state.isLoading = false;
       state.vehicles = payload;
     },
-    [getVehicles.rejected]: (state, { payload }) => {
+    [getVehicles.rejected]: (state, action) => {
       state.isLoading = false;
-      state.message = payload;
+      state = { ...state, message: action.payload };
     },
   },
 });

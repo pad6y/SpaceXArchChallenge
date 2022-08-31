@@ -18,9 +18,10 @@ function CrewPage() {
   const { crew, page, isLoading } = useSelector((store) => store.crew);
 
   useEffect(() => {
-    dispatch(getAllCrew());
+    const promise = dispatch(getAllCrew());
 
     return () => {
+      promise.abort();
       dispatch(cleanUp());
     };
   }, [dispatch]);

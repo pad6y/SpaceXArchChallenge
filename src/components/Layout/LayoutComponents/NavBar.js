@@ -10,7 +10,7 @@ function NavBar() {
       {location.pathname !== '/' ? (
         <h1>{category ? `${category}` : 'Crew'} list</h1>
       ) : (
-        <h1>Home</h1>
+        <h1>Welcome</h1>
       )}
       <div className={styles.nav_list}>
         <ul>

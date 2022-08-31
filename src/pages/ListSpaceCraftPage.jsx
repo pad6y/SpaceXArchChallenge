@@ -15,9 +15,10 @@ function ListItems() {
   const [order, setOrder] = useState(false);
 
   useEffect(() => {
-    dispatch(getVehicles(category));
+    const promise = dispatch(getVehicles(category));
 
     return () => {
+      promise.abort();
       dispatch(reset());
     };
   }, [category, dispatch]);

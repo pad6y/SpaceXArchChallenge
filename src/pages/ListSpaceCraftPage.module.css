@@ -11,7 +11,7 @@
 .itemsContainer {
   display: grid;
   gap: 2rem;
-  padding: 0 0.5rem;
+  padding: 0 1.5rem;
   grid-template-columns: repeat(auto-fill, minmax(338.8px, 1fr));
 }
 

@@ -1,6 +1,7 @@
 .crew_container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  padding: 1rem;
 }
 
 @media screen and (max-width: 1150px) {

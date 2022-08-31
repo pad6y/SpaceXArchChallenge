@@ -3,7 +3,9 @@ const URL = 'https://api.spacexdata.com/v4/';
 
 export const getVehiclesThunk = async (category, thunkAPI) => {
   try {
-    const response = await axios(`${URL}${category}`);
+    const response = await axios(`${URL}${category}`, {
+      signal: thunkAPI.signal,
+    });
 
     const formatted = response.data.map((item) => {
       const {
