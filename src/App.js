@@ -1,7 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Layout from './components/Layout/Layout';
-import { Home, ListSpaceCraftPage, CrewPage, NotFound } from './pages';
+import {
+  Home,
+  ListSpaceCraftPage,
+  SpaceCraftPage,
+  CrewPage,
+  NotFound,
+} from './pages';
 
 function App() {
   return (
@@ -10,7 +16,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
-            <Route path="/:category" element={<ListSpaceCraftPage />} />
+            <Route path=":category" element={<ListSpaceCraftPage />} />
+            <Route path=":category/:id" element={<SpaceCraftPage />} />
             <Route path="/crew" element={<CrewPage />} />
             <Route path="*" element={<NotFound />} />
           </Route>

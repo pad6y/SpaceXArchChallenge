@@ -9,7 +9,7 @@ const initialState = {
   page: 0,
 };
 
-export const getAllCrew = createAsyncThunk('crew/getAllCrew', getAllCrewThunk);
+export const getAllCrew = createAsyncThunk('Crew/getAllCrew', getAllCrewThunk);
 
 export const crewSlice = createSlice({
   name: 'crew',
@@ -24,9 +24,7 @@ export const crewSlice = createSlice({
     handlePage: (state, { payload }) => {
       state.page = payload;
     },
-    cleanUp: (state) => {
-      state = initialState;
-    },
+    cleanUp: () => initialState,
   },
   extraReducers: {
     [getAllCrew.pending]: (state) => {
@@ -38,11 +36,9 @@ export const crewSlice = createSlice({
       state.totalPages = state.crew.length;
       state.isLoading = false;
     },
-    [getAllCrew.rejected]: (state, action) => {
+    [getAllCrew.rejected]: (state, { payload }) => {
       state.isLoading = false;
-      if (action.payload) {
-        console.log(action.payload);
-      }
+      if (payload) console.log(payload);
     },
   },
 });

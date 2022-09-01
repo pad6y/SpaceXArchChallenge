@@ -19,7 +19,7 @@ export const vehicleSlice = createSlice({
     sortList: (state) => {
       state.vehicles = state.vehicles.reverse();
     },
-    reset: (state) => initialState,
+    reset: () => initialState,
   },
   extraReducers: {
     [getVehicles.pending]: (state) => {
@@ -29,9 +29,13 @@ export const vehicleSlice = createSlice({
       state.isLoading = false;
       state.vehicles = payload;
     },
-    [getVehicles.rejected]: (state, action) => {
+    [getVehicles.rejected]: (state, { payload }) => {
       state.isLoading = false;
-      state = { ...state, message: action.payload };
+      if (payload) {
+        state.message = payload;
+      } else {
+        state.message = '';
+      }
     },
   },
 });

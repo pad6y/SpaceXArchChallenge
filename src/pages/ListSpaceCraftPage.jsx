@@ -18,8 +18,8 @@ function ListItems() {
     const promise = dispatch(getVehicles(category));
 
     return () => {
-      promise.abort();
       dispatch(reset());
+      promise.abort();
     };
   }, [category, dispatch]);
 
@@ -40,7 +40,7 @@ function ListItems() {
       </div>
       <div className={styles.itemsContainer}>
         {vehicles.map((vehicle) => (
-          <ItemsCard key={vehicle.id} vehicle={vehicle} />
+          <ItemsCard key={vehicle.id} vehicle={vehicle} category={category} />
         ))}
       </div>
     </div>

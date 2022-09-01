@@ -2,10 +2,13 @@ import axios from 'axios';
 const URL = 'https://api.spacexdata.com/v4/crew';
 
 export const getAllCrewThunk = async (_, thunkAPI) => {
-  // console.log(thunkAPI);
+  // console.log(thunkAPI.signal);
   try {
-    const response = await axios.get(URL, { signal: thunkAPI.signal });
-    return response.data;
+    const { data } = await axios.get(URL, {
+      signal: thunkAPI.signal,
+    });
+
+    return data;
   } catch (error) {
     return thunkAPI.rejectWithValue(error.message);
   }

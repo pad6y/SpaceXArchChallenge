@@ -4,16 +4,21 @@
   flex-direction: column;
   margin: 0 auto;
   padding: 2rem;
+  position: relative;
+  min-height: 360px;
 }
 
 @media screen and (max-width: 580px) {
   .profile_container {
+    flex-direction: row;
     padding: 0.5rem;
+    min-height: 250px;
   }
 }
-@media screen and (max-width: 520px) {
+
+@media screen and (max-width: 440px) {
   .profile_container {
-    flex-direction: row;
+    min-height: 170px;
   }
 }
 
@@ -25,15 +30,33 @@
   object-fit: cover;
   margin: 0.5rem;
   padding: 1rem;
-  background-color: transparent;
+  background-color: var(--medium-grey);
   box-shadow: var(--mediumShadow);
   transition: all 0.4s ease;
+  position: relative;
+  z-index: 100;
 }
+
+@media screen and (max-width: 580px) {
+  .image {
+    margin-left: 2rem;
+  }
+}
+
 @media screen and (max-width: 520px) {
   .image {
     height: 170px;
     width: 170px;
     padding: 0.5rem;
+    margin-left: 0;
+  }
+}
+@media screen and (max-width: 400px) {
+  .image {
+    height: 160px;
+    width: 160px;
+    padding: 0.5rem;
+    margin-left: 0;
   }
 }
 
@@ -47,16 +70,59 @@ h3 {
   margin: 0.3rem;
 }
 .status {
-  color: green;
+  color: var(--green);
   text-transform: uppercase;
 }
 
 .detail_container {
+  position: absolute;
+  min-width: 240px;
   text-align: center;
+  color: var(--white);
+  background-color: var(--dark-grey);
+  padding: 5rem 2.5rem 1.5rem;
+  bottom: -1rem;
+  border: 2px solid var(--white);
+  border-radius: 12px;
+  box-shadow: var(--mediumShadow);
+}
+
+@media screen and (max-width: 770px) {
+  .detail_container {
+    bottom: 0.5rem;
+    padding: 4rem 2.5rem 1rem;
+  }
 }
 @media screen and (max-width: 580px) {
   .detail_container {
-    margin: 1.5rem;
+    min-width: 310px;
+    padding: 2rem 2.5rem 2rem 7rem;
+    bottom: 3rem;
+    left: 11rem;
+  }
+}
+@media screen and (max-width: 520px) {
+  .detail_container {
+    min-width: 230px;
+    padding: 2rem 2.5rem 2rem 6rem;
+
+    left: 7rem;
+  }
+}
+@media screen and (max-width: 440px) {
+  .detail_container {
+    padding: 0.8rem 2.5rem 0.8rem 2rem;
+    left: 8rem;
+  }
+  h3 {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .detail_container {
+    padding-right: 0.5rem;
+    bottom: 2.5rem;
   }
 }
 

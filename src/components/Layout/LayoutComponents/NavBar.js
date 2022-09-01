@@ -2,16 +2,18 @@ import { NavLink, useParams, useLocation } from 'react-router-dom';
 import styles from './NavBar.module.css';
 
 function NavBar() {
-  const { category } = useParams();
+  const { category, id } = useParams();
   const location = useLocation();
 
   return (
     <nav className={styles.navbar}>
-      {location.pathname !== '/' ? (
+      {location.pathname !== '/' && !id && (
         <h1>{category ? `${category}` : 'Crew'} list</h1>
-      ) : (
-        <h1>Welcome</h1>
       )}
+
+      {location.pathname === '/' && !id && <h1>Welcome</h1>}
+      {id && <h1>{category}</h1>}
+
       <div className={styles.nav_list}>
         <ul>
           <li>

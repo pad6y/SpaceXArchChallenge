@@ -10,6 +10,7 @@ import {
 import ProfileCard from '../components/Items/ProfileCard';
 import PaginationBtns from '../components/UI/PaginationBtns';
 import styles from './CrewPage.module.css';
+import LoadingSpinner from '../components/UI/LoadingSpinner';
 
 function CrewPage() {
   const dispatch = useDispatch();
@@ -21,8 +22,8 @@ function CrewPage() {
     const promise = dispatch(getAllCrew());
 
     return () => {
-      promise.abort();
       dispatch(cleanUp());
+      promise.abort();
     };
   }, [dispatch]);
 
@@ -65,7 +66,7 @@ function CrewPage() {
           </div>
         </>
       ) : (
-        'Loading...'
+        <LoadingSpinner />
       )}
     </section>
   );

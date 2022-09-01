@@ -25,16 +25,18 @@ function ProfileCard({ profile }) {
   }
 
   return (
-    <div className={styles.profile_container}>
-      <a href={wiki}>
-        <img src={image} alt="profile pic" className={styles.image} />
-      </a>
-      <div className={styles.detail_container}>
-        <h3>{name}</h3>
-        {agencyContent}
-        <h3 className={styles.status}>{status}</h3>
+    <>
+      <div className={styles.profile_container}>
+        <a href={wiki}>
+          <img src={image} alt="profile pic" className={styles.image} />
+        </a>
+        <div className={styles.detail_container}>
+          <h3>{name}</h3>
+          {agencyContent}
+          <h3 className={styles.status}>{status}</h3>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 export default ProfileCard;

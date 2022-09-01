@@ -2,38 +2,27 @@ import axios from 'axios';
 const URL = 'https://api.spacexdata.com/v4/';
 
 export const getVehiclesThunk = async (category, thunkAPI) => {
+  // console.log(thunkAPI.signal);
   try {
     const response = await axios(`${URL}${category}`, {
       signal: thunkAPI.signal,
     });
 
     const formatted = response.data.map((item) => {
-      const {
-        id,
-        name,
-        type,
-        flickr_images: images,
-        description,
-        wikipedia,
-      } = item;
       const formattedEntry = {
-        id,
-        name,
-        type,
-        images,
-        description,
-        wikipedia,
+        id: item.id,
+        name: item.name,
+        type: item.type,
+        images: item.flickr_images,
+        description: item.description,
+        wikipedia: item.wikipedia,
       };
+
       return formattedEntry;
     });
 
     return formatted;
   } catch (error) {
-    const message =
-      (error.response && error.response.data && error.response.data.message) ||
-      error.message ||
-      error.toString();
-
-    return thunkAPI.rejectWithValue(message);
+    return thunkAPI.rejectWithValue(error.message);
   }
 };
