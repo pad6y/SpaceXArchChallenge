@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { getSpaceCraftThunk } from './spaceCraftThunk';
+import { format } from 'date-fns';
 
 const initialState = {
   spaceCraft: {},
@@ -14,7 +15,11 @@ export const getSpaceCraft = createAsyncThunk(
 export const spaceCraftSlice = createSlice({
   name: 'spaceCraft',
   initialState,
-  reducers: {},
+  reducers: {
+    formatDate: (state, { payload }) => {
+      return format(new Date(payload), 'd MMMM yyyy');
+    },
+  },
   extraReducers: {
     [getSpaceCraft.pending]: (state) => {
       state.isLoading = true;
@@ -30,6 +35,6 @@ export const spaceCraftSlice = createSlice({
   },
 });
 
-// export const {} = spaceCraftSlice.actions;
+export const { formatDate } = spaceCraftSlice.actions;
 
 export default spaceCraftSlice.reducer;

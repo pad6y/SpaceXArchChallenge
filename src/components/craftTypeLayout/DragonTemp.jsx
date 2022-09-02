@@ -1,67 +1,86 @@
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { getSpaceCraft } from '../../features/spaceCraft/spaceCraftSlice';
+import { useSlider } from '../../hooks/useSlider';
 import LoadingSpinner from '../UI/LoadingSpinner';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import styles from './stylesTemp.module.css';
+import { format } from 'date-fns';
 
-function DragonTemp() {
-  const { category, id } = useParams();
-  const dispatch = useDispatch();
-  const { spaceCraft, isLoading } = useSelector((store) => store.spaceCraft);
+function DragonTemp({ spaceCraft, isLoading }) {
+  const {
+    name,
+    flickr_images,
+    description,
+    first_flight,
+    crew_capacity,
+    type,
+    active,
+    launch_payload_mass,
+    height_w_trunk,
+    diameter,
+  } = spaceCraft;
 
-  const { flickr_images, description } = spaceCraft;
-  const [images, setImages] = useState([]);
-  const [idx, setIdx] = useState(0);
-
-  useEffect(() => {
-    const promise = dispatch(getSpaceCraft({ category, id }));
-
-    return () => {
-      promise.abort();
-    };
-  }, [dispatch, category, id]);
-
-  useEffect(() => {
-    setImages(flickr_images);
-  }, [flickr_images]);
+  let arrLength;
+  if (flickr_images !== undefined) {
+    arrLength = flickr_images.length;
+  }
+  const [idx, handleBack, handleForward] = useSlider(arrLength);
 
   if (isLoading) return <LoadingSpinner />;
-
-  const handleBack = () => {
-    if (idx === 0) {
-      setIdx(images.length - 1);
-    } else {
-      setIdx((prev) => prev - 1);
-    }
-  };
-  const handleForward = () => {
-    if (idx === images.length - 1) {
-      setIdx(0);
-    } else {
-      setIdx((prev) => prev + 1);
-    }
-  };
+  let formatDate;
+  if (first_flight !== undefined) {
+    formatDate = format(new Date(first_flight), 'd MMMM yyyy');
+  }
 
   return (
     <div className={styles.container}>
       <div className={styles.stats}>
-        <div className={styles.box}>b1</div>
-        <div className={styles.box}>b2</div>
-        <div className={styles.box}>b3</div>
+        <div className={styles.box}>
+          <div className={styles.box_content}>
+            <h1>first flight</h1>
+            <h3>{formatDate}</h3>
+          </div>
+        </div>
+        <div className={styles.box}>
+          <div className={styles.box_content}>
+            <h1>Name</h1>
+            <h3>{name}</h3>
+          </div>
+        </div>
+        <div className={styles.box}>
+          <div className={styles.box_content}>
+            <h1>crew capacity</h1>
+            <h3>{crew_capacity}</h3>
+          </div>
+        </div>
       </div>
       <div className={styles.image}>
-        <button className={styles.slider_btn} onClick={handleBack}>
+        <button
+          className={`${styles.slider_btn} ${styles.left}`}
+          onClick={handleBack}
+        >
           <FaChevronLeft />
         </button>
-        <img src={images[idx]} alt="flickr img" />
-        <button className={styles.slider_btn} onClick={handleForward}>
+        {flickr_images !== undefined ? (
+          <img src={flickr_images[idx]} alt="flickr img" />
+        ) : (
+          <LoadingSpinner />
+        )}
+        <button
+          className={`${styles.slider_btn} ${styles.right}`}
+          onClick={handleForward}
+        >
           <FaChevronRight />
         </button>
       </div>
       <div className={styles.desc_container}>
-        <div className={styles.details}>Details</div>
+        {launch_payload_mass !== undefined && (
+          <div className={styles.details}>
+            <h3>Type:- {type}</h3>
+            <h3>Launch Mass:- {launch_payload_mass.kg}kg</h3>
+            <h3>Height plus trunk:- {height_w_trunk.meters}m</h3>
+            <h3>Diameter:- {diameter.meters}m</h3>
+            {active && <div className={styles.status}>active</div>}
+          </div>
+        )}
         <div className={styles.desc}>{description}</div>
       </div>
     </div>

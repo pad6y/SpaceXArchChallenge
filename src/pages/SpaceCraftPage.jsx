@@ -1,14 +1,28 @@
+import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { getSpaceCraft } from '../features/spaceCraft/spaceCraftSlice';
 import DragonTemp from '../components/craftTypeLayout/DragonTemp';
 import RocketTemp from '../components/craftTypeLayout/RocketTemp';
+import { useDispatch, useSelector } from 'react-redux';
 
-// import styles from './SpaceCraftPage.module.css';
 function SpaceCraftPage() {
-  const { category } = useParams();
+  const { category, id } = useParams();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getSpaceCraft({ category, id }));
+  }, [dispatch, category, id]);
+
+  const { spaceCraft, isLoading } = useSelector((store) => store.spaceCraft);
+
   return (
     <section>
-      {category === 'dragons' && <DragonTemp />}
-      {category === 'rockets' && <RocketTemp />}
+      {category === 'dragons' && (
+        <DragonTemp spaceCraft={spaceCraft} isLoading={isLoading} />
+      )}
+      {category === 'rockets' && (
+        <RocketTemp spaceCraft={spaceCraft} isLoading={isLoading} />
+      )}
     </section>
   );
 }
