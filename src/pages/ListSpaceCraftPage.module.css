@@ -11,6 +11,8 @@
 .itemsContainer {
   display: grid;
   gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 0 1.5rem 2rem;
   grid-template-columns: repeat(auto-fill, minmax(338.8px, 1fr));
 }
@@ -44,8 +46,7 @@
 @media screen and (max-width: 576px) {
   .btn {
     margin: 1rem;
-    padding: 0.5rem 1rem;
-    border-radius: 0;
+    padding: 0.5rem 0.5rem;
   }
 }
 

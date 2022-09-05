@@ -1,0 +1,31 @@
+.modal {
+  z-index: 1000;
+  position: fixed;
+  top: 10vh;
+  left: 10%;
+  width: 80%;
+  height: 80vh;
+  background-color: var(--dark-grey);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  border: 2px solid var(--white);
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+  width: 100%;
+  padding: 1rem 0.5rem;
+  background: var(--green);
+  color: var(--black);
+  text-transform: uppercase;
+}
+
+.content {
+  /* height: 40vh;
+  width: 100%; */
+  padding: 1rem;
+}

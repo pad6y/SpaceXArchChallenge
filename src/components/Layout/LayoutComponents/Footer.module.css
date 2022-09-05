@@ -13,7 +13,8 @@ footer {
 .container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  margin: 1.5rem;
+  max-width: 1200px;
+  margin: 1.5rem auto;
 }
 
 .logo {

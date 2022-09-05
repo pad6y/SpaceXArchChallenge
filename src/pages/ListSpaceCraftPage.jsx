@@ -4,6 +4,7 @@ import styles from './ListSpaceCraftPage.module.css';
 import { getVehicles, reset, sortList } from '../features/vehicle/vehicleSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import ItemsCard from '../components/Items/ItemsCard';
+import Button from '../components/UI/Button';
 import LoadingSpinner from '../components/UI/LoadingSpinner';
 
 function ListItems() {
@@ -34,9 +35,9 @@ function ListItems() {
   return (
     <div className={styles.section}>
       <div className={styles.action_container}>
-        <button className={styles.btn} onClick={sort}>
+        <Button customClass={styles.btn} onClick={sort}>
           Sort by {order ? 'asc' : 'desc'}
-        </button>
+        </Button>
       </div>
       <div className={styles.itemsContainer}>
         {vehicles.map((vehicle) => (

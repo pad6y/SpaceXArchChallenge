@@ -3,6 +3,10 @@
   align-items: center;
   margin: 2rem 0;
 }
+.btn {
+  color: var(--white);
+  background-color: var(--dark-grey);
+}
 
 .prev_btn {
   margin-right: 0.5rem;

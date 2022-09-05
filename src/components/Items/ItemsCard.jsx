@@ -1,4 +1,5 @@
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import Button from '../UI/Button';
 import styles from './ItemsCard.module.css';
 
 function ItemsCard({ vehicle }) {
@@ -13,20 +14,8 @@ function ItemsCard({ vehicle }) {
         <p>Description: {description.substring(0, 240)}...</p>
       </div>
       <div className={styles.center}>
-        <Link
-          to={`/${category}/${id}`}
-          className={`${styles.btn} ${styles.btn_reverse}`}
-        >
-          more details
-        </Link>
-        <a
-          href={wikipedia}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.btn}
-        >
-          Wiki
-        </a>
+        <Button to={`/${category}/${id}`}>more details</Button>
+        <Button href={wikipedia}>wiki</Button>
       </div>
     </article>
   );

@@ -1,4 +1,6 @@
 .container {
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 3rem;
 }
 
@@ -29,12 +31,6 @@
   object-fit: cover;
   box-shadow: var(--mediumShadow);
 }
-
-/* @media screen and (max-width: 1000px) {
-  .image img {
-    height: 400px;
-  }
-} */
 
 .stats {
   display: flex;
@@ -121,6 +117,7 @@
   border-radius: 1rem;
   text-transform: uppercase;
   font-weight: bold;
+  margin-top: 0.5rem;
 }
 
 .retired {
@@ -135,7 +132,7 @@
   color: var(--green);
   opacity: 0.5;
   filter: drop-shadow(3px 1px 1px rgba(1, 1, 1, 0.7));
-  transition: transform 150ms ease-in-out;
+  transition: transform 0.3s ease;
 }
 .left {
   left: 0;
@@ -146,4 +143,5 @@
 
 .slider_btn:hover {
   transform: scale(1.2);
+  opacity: 1;
 }

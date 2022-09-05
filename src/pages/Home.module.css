@@ -8,20 +8,20 @@
   background: url('../assets/low-poly-grid-haikei.svg');
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
 }
 
 .circle {
   height: 30rem;
   width: 30rem;
   border-radius: 50%;
-  background-image: conic-gradient(
+  background-image: linear-gradient(
     var(--green),
     green,
     var(--dark-grey),
     black
   );
   position: relative;
-  /* animation: rotate 2s linear infinite; */
 }
 
 .center_circle {
@@ -38,8 +38,10 @@
   position: absolute;
   fill: var(--white);
   top: 3rem;
+
   right: -18rem;
   width: 150rem;
+  z-index: 100;
 }
 
 .welcome {
@@ -75,11 +77,11 @@
   }
 }
 
-@keyframes rotate {
+/* @keyframes rotate {
   0% {
     transform: rotate(0deg);
   }
   100% {
     transform: rotate(-360deg);
   }
-}
+} */

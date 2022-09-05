@@ -1,0 +1,44 @@
+/* nav button */
+.btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 35px;
+  border: 2px solid var(--white);
+  background-color: var(--dark-grey);
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+}
+@media screen and (max-width: 767px) {
+  .btn {
+    display: none;
+  }
+}
+
+.btn:hover {
+  width: 29rem;
+}
+@media screen and (max-width: 830px) {
+  .btn:hover {
+    width: 27rem;
+  }
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: var(--green);
+  height: 4rem;
+  width: 4rem;
+  transform: rotate(45deg);
+  transition: all 0.4s ease;
+}
+
+.btn:hover .icon {
+  transform: rotate(-135deg);
+}

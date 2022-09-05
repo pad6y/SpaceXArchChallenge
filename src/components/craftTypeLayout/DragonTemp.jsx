@@ -1,4 +1,5 @@
 import { useSlider } from '../../hooks/useSlider';
+import Button from '../UI/Button';
 import LoadingSpinner from '../UI/LoadingSpinner';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import styles from './stylesTemp.module.css';
@@ -53,23 +54,23 @@ function DragonTemp({ spaceCraft, isLoading }) {
         </div>
       </div>
       <div className={styles.image}>
-        <button
-          className={`${styles.slider_btn} ${styles.left}`}
+        <Button
+          customClass={`${styles.slider_btn} ${styles.left}`}
           onClick={handleBack}
         >
           <FaChevronLeft />
-        </button>
+        </Button>
         {flickr_images !== undefined ? (
           <img src={flickr_images[idx]} alt="flickr img" />
         ) : (
           <LoadingSpinner />
         )}
-        <button
-          className={`${styles.slider_btn} ${styles.right}`}
+        <Button
+          customClass={`${styles.slider_btn} ${styles.right}`}
           onClick={handleForward}
         >
           <FaChevronRight />
-        </button>
+        </Button>
       </div>
       <div className={styles.desc_container}>
         {launch_payload_mass !== undefined && (

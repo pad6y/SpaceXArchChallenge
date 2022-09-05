@@ -1,11 +1,13 @@
 import { useState } from 'react';
 
-export const useToggle = () => {
+const useToggle = () => {
   const [toggle, setToggle] = useState(false);
 
-  const onClick = () => {
+  const onClickTog = () => {
     setToggle(!toggle);
   };
 
-  return [toggle, onClick];
+  return [toggle, onClickTog];
 };
+
+export default useToggle;

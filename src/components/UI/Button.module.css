@@ -1,0 +1,20 @@
+.btn {
+  width: 50%;
+  padding: 0.4rem 1rem;
+  margin: 0.5rem 0;
+  border: none;
+  border-radius: 25px;
+  background-color: var(--green);
+  color: var(--black);
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  text-transform: capitalize;
+  transition: all 0.4s ease;
+}
+
+.btn:hover {
+  background-color: var(--white);
+  color: var(--green);
+  transform: scale(1.1);
+}

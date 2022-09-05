@@ -1,60 +1,37 @@
-import { NavLink, useParams, useLocation } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
+import useToggle from '../../../hooks/useToggle';
+import SlidingMenu from './SlidingMenu';
+import Button from '../../UI/Button';
+import Modal from '../../UI/Modal';
+import NavLinks from './NavLinks';
+import { FiMenu } from 'react-icons/fi';
 import styles from './NavBar.module.css';
 
 function NavBar() {
   const { category, id } = useParams();
   const location = useLocation();
+  const [toggle, onClickTog] = useToggle();
 
   return (
-    <nav className={styles.navbar}>
-      {location.pathname !== '/' && !id && (
-        <h1>{category ? `${category}` : 'Crew'} list</h1>
-      )}
+    <>
+      <Modal header="nav options" toggle={toggle} onClick={onClickTog}>
+        <NavLinks onClick={onClickTog} />
+      </Modal>
+      <nav className={styles.navbar}>
+        <div className={styles.navbar_container}>
+          {location.pathname !== '/' && !id && (
+            <h1>{category ? `${category}` : 'Crew'} list</h1>
+          )}
 
-      {location.pathname === '/' && !id && <h1>Welcome</h1>}
-      {id && <h1>{category}</h1>}
-
-      <div className={styles.nav_list}>
-        <ul>
-          <li>
-            <NavLink
-              to="/rockets"
-              className={({ isActive }) =>
-                isActive
-                  ? `${styles.nav_link} ${styles.active}`
-                  : `${styles.nav_link}`
-              }
-            >
-              Rockets
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/dragons"
-              className={({ isActive }) =>
-                isActive
-                  ? `${styles.nav_link} ${styles.active}`
-                  : `${styles.nav_link}`
-              }
-            >
-              Dragons
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/crew"
-              className={({ isActive }) =>
-                isActive
-                  ? `${styles.nav_link} ${styles.active}`
-                  : `${styles.nav_link}`
-              }
-            >
-              Crew
-            </NavLink>
-          </li>
-        </ul>
-      </div>
-    </nav>
+          {location.pathname === '/' && !id && <h1>Welcome</h1>}
+          {id && <h1>{category}</h1>}
+          <SlidingMenu />
+          <Button customClass={styles.btn} onClick={onClickTog}>
+            <FiMenu />
+          </Button>
+        </div>
+      </nav>
+    </>
   );
 }
 

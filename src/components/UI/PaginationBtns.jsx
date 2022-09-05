@@ -14,7 +14,10 @@ function PaginationBtns({
       {!isLoading && (
         <div className={styles.btn_container}>
           {page !== 0 && (
-            <button className={styles.prev_btn} onClick={prevPage}>
+            <button
+              className={`${styles.btn} ${styles.prev_btn}`}
+              onClick={prevPage}
+            >
               <FaChevronLeft className={styles.icon} />
             </button>
           )}
@@ -22,7 +25,7 @@ function PaginationBtns({
             let style;
             page === index
               ? (style = `${styles.page_btn} ${styles.active_btn}`)
-              : (style = `${styles.page_btn}`);
+              : (style = `${styles.btn} ${styles.page_btn}`);
 
             return (
               <button
@@ -35,7 +38,10 @@ function PaginationBtns({
             );
           })}
           {page !== data.length - 1 && (
-            <button className={styles.next_btn} onClick={nextPage}>
+            <button
+              className={`${styles.btn} ${styles.next_btn}`}
+              onClick={nextPage}
+            >
               <FaChevronRight className={styles.icon} />
             </button>
           )}

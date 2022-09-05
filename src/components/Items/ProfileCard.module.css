@@ -76,11 +76,11 @@ h3 {
 
 .detail_container {
   position: absolute;
-  min-width: 240px;
+  width: 260px;
   text-align: center;
   color: var(--white);
   background-color: var(--dark-grey);
-  padding: 5rem 2.5rem 1.5rem;
+  padding: 5rem 1rem 1.5rem;
   bottom: -1rem;
   border: 2px solid var(--white);
   border-radius: 12px;
@@ -90,39 +90,38 @@ h3 {
 @media screen and (max-width: 770px) {
   .detail_container {
     bottom: 0.5rem;
-    padding: 4rem 2.5rem 1rem;
+    padding: 4rem 1rem 1rem;
   }
 }
 @media screen and (max-width: 580px) {
   .detail_container {
-    min-width: 310px;
-    padding: 2rem 2.5rem 2rem 7rem;
+    /* min-width: 310px; */
+    padding: 2rem 1rem 2rem 4rem;
     bottom: 3rem;
     left: 11rem;
   }
 }
 @media screen and (max-width: 520px) {
   .detail_container {
-    min-width: 230px;
-    padding: 2rem 2.5rem 2rem 6rem;
+    width: 230px;
+    padding: 2rem 2.5rem 2rem 5rem;
 
     left: 7rem;
   }
 }
 @media screen and (max-width: 440px) {
   .detail_container {
-    padding: 0.8rem 2.5rem 0.8rem 2rem;
+    padding: 0.8rem 0rem 0.8rem 1rem;
     left: 8rem;
   }
   h3 {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 }
 
 @media screen and (max-width: 400px) {
   .detail_container {
-    padding-right: 0.5rem;
-    bottom: 2.5rem;
+    width: 215px;
   }
 }
 
