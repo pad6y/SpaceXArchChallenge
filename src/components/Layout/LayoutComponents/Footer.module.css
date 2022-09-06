@@ -13,7 +13,7 @@ footer {
 .container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  max-width: 1200px;
+  max-width: 800px;
   margin: 1.5rem auto;
 }
 
@@ -36,12 +36,12 @@ footer {
 
 .col1 {
   padding: 1rem;
-  margin-left: 11rem;
+  margin: 0 auto;
 }
 
 .col2 {
   padding: 1rem;
-  margin-left: 8rem;
+  margin: 0 auto;
 }
 
 @media screen and (max-width: 770px) {
@@ -56,7 +56,8 @@ footer {
 .summary {
   font-size: 0.8rem;
   text-align: center;
-  margin-top: 0.5rem;
+  margin: 1rem auto;
+  max-width: 800px;
 }
 
 .col_format {

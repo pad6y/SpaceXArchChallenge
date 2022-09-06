@@ -16,11 +16,10 @@ function ListItems() {
   const [order, setOrder] = useState(false);
 
   useEffect(() => {
-    const promise = dispatch(getVehicles(category));
+    dispatch(getVehicles(category));
 
     return () => {
       dispatch(reset());
-      promise.abort();
     };
   }, [category, dispatch]);
 

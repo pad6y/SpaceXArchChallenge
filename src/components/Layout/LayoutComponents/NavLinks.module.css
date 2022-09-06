@@ -5,7 +5,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 60px;
+
   list-style: none;
   font-weight: bold;
 }
@@ -14,7 +14,7 @@
   .nav_list {
     position: relative;
     flex-direction: column;
-    top: 25vh;
+
     left: 0;
   }
 }
@@ -30,7 +30,7 @@
     font-size: 2rem;
   }
   li {
-    margin: 2rem 0rem;
+    margin: 1rem 0rem;
   }
 }
 

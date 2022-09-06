@@ -5,7 +5,8 @@ export const getVehiclesThunk = async (category, thunkAPI) => {
   // console.log(thunkAPI.signal);
   try {
     const response = await axios(`${URL}${category}`, {
-      signal: thunkAPI.signal,
+      headers: { Accept: 'application/json' },
+      // signal: thunkAPI.signal,
     });
 
     const formatted = response.data.map((item) => {

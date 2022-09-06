@@ -5,7 +5,8 @@ export const getAllCrewThunk = async (_, thunkAPI) => {
   // console.log(thunkAPI.signal);
   try {
     const { data } = await axios.get(URL, {
-      signal: thunkAPI.signal,
+      headers: { Accept: 'application/json' },
+      // signal: thunkAPI.signal,
     });
 
     return data;
